@@ -44,9 +44,11 @@ window.onload = () => {
                     const longitude = place.location.lng;
 
                     // add place name
-                    const placeText = document.createElement('a-link');
+                    const placeText = document.createElement('a-entity');
                     placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     placeText.setAttribute('title', place.name);
+                    placeText.setAttribute('geometry', 'primitive: box');
+                    placeText.setAttribute('material', 'color: red');
                     placeText.setAttribute('scale', '75 15 35');
                     
                     placeText.addEventListener('loaded', () => {
