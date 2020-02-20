@@ -93,7 +93,7 @@ function renderPlaces(places) {
         icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
         icon.setAttribute('name', place.name);
         icon.setAttribute('city', place.city);
-        icon.setAttribute('src', 'https://www.w3schools.com/images/picture.jpg');
+        icon.setAttribute('src', '${corsProxy}https://www.w3schools.com/images/picture.jpg');
 
         // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
         icon.setAttribute('scale', '10, 10');
