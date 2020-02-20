@@ -91,12 +91,16 @@ function renderPlaces(places) {
         // add place icon
         const icon = document.createElement('a-image');
         icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
-        icon.setAttribute('name', place.name);
+        icon.setAttribute('title', place.name);
         icon.setAttribute('city', place.city);
         icon.setAttribute('src', 'https://arshadahmed.github.io/DynamicGeoAR/assets/map-marker.png');
 
         // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
         icon.setAttribute('scale', '20, 20');
+        
+        const placeText = document.createElement('a-link');
+                   // placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+                    placeText.setAttribute('title', place.name);
 
         icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
 
